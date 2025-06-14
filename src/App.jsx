@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const getPosts = async () => {
       const { data } = await axios.get(
-        "https://blog-server.ali-tharwat.repl.co/posts"
+        "blogappserver-production-985b.up.railway.app/posts"
       );
       setPosts(data);
     };
