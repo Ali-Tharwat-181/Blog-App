@@ -29,7 +29,7 @@ export default function Login({ handleLogIn }) {
       handleLogIn();
 
       toast.success("Login successful!");
-      navigate("/"); // or home page
+      navigate("/");
     } catch (error) {
       console.error("Login failed:", error.response?.data || error.message);
       toast.error("Login failed: Invalid email or password");

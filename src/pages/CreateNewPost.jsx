@@ -39,14 +39,11 @@ export default function CreateNewPost(props) {
   };
 
   const handleAdd = async () => {
-    // prepare object to send to DB
     const dataToSubmit = {
       title: form.title,
       body: form.body,
       coverImage: form.coverImage,
     };
-    console.log(dataToSubmit.coverImage);
-    // call backend
     try {
       const { data } = await axios.post(
         "https://blog-app-server-roan-xi.vercel.app/posts",
@@ -67,13 +64,11 @@ export default function CreateNewPost(props) {
   };
 
   const handleEdit = async () => {
-    // prepare object
     const objectToSubmit = {
       title: form.title,
       body: form.body,
       coverImage: form.coverImage,
     };
-    // call backend
     const { data } = await axios.put(
       `https://blog-app-server-roan-xi.vercel.app/posts/${id}`,
       objectToSubmit,
@@ -83,11 +78,11 @@ export default function CreateNewPost(props) {
         },
       }
     );
-    // navigate to home
+
     navigate("/");
-    // update state of the frontend
+
     handleUpdatePost(data);
-    // show toast
+
     toast.success("Product updated successfully!");
   };
 

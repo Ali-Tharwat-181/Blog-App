@@ -7,6 +7,7 @@ import CreateNewPost from "./pages/CreateNewPost";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -20,7 +21,7 @@ function App() {
         const { data } = await axios.get(
           "https://blog-app-server-roan-xi.vercel.app/posts",
           {
-            withCredentials: true, // Important for CORS with credentials
+            withCredentials: true,
             headers: {
               "Content-Type": "application/json",
             },
@@ -101,14 +102,17 @@ function App() {
           />
           <Route path="/login" element={<Login handleLogIn={handleLogIn} />} />
           <Route path="/signup" element={<SignUp />} />
+
           <Route
             path="/addPost/:id"
             element={
-              <CreateNewPost
-                posts={posts}
-                handleAddNewPost={handleAddNewPost}
-                handleUpdatePost={handleUpdatePost}
-              />
+              <ProtectedRoute>
+                <CreateNewPost
+                  posts={posts}
+                  handleAddNewPost={handleAddNewPost}
+                  handleUpdatePost={handleUpdatePost}
+                />
+              </ProtectedRoute>
             }
           />
           <Route path="*" element={<Navigate to="/" />} />
