@@ -18,7 +18,7 @@ function App() {
     const getPosts = async () => {
       try {
         const { data } = await axios.get(
-          "https://blog-app-server-d1jojwlex-ali-tharwat-181s-projects.vercel.app/posts",
+          "https://blog-app-server-roan-xi.vercel.app/posts",
           {
             withCredentials: true, // Important for CORS with credentials
             headers: {
