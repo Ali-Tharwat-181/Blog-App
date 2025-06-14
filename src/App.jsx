@@ -16,7 +16,9 @@ function App() {
 
   useEffect(() => {
     const getPosts = async () => {
-      const { data } = await axios.get("http://localhost:8000/posts");
+      const { data } = await axios.get(
+        "https://blog-app-server-d1jojwlex-ali-tharwat-181s-projects.vercel.app/posts"
+      );
       setPosts(data);
     };
     getPosts();
