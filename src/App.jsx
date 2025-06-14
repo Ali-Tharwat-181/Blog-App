@@ -16,7 +16,9 @@ function App() {
 
   useEffect(() => {
     const getPosts = async () => {
-      const { data } = await axios.get("http://localhost:8000/posts");
+      const { data } = await axios.get(
+        "https://blog-server.ali-tharwat.repl.co/posts"
+      );
       setPosts(data);
     };
     getPosts();
