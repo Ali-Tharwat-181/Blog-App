@@ -16,9 +16,7 @@ function App() {
 
   useEffect(() => {
     const getPosts = async () => {
-      const { data } = await axios.get(
-        "blogappserver-production-985b.up.railway.app/posts"
-      );
+      const { data } = await axios.get("http://localhost:8000/posts");
       setPosts(data);
     };
     getPosts();
