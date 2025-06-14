@@ -49,7 +49,7 @@ export default function CreateNewPost(props) {
     // call backend
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/posts",
+        "https://blog-app-server-roan-xi.vercel.app/posts",
         dataToSubmit,
         {
           headers: {
@@ -75,7 +75,7 @@ export default function CreateNewPost(props) {
     };
     // call backend
     const { data } = await axios.put(
-      `http://localhost:8000/posts/${id}`,
+      `https://blog-app-server-roan-xi.vercel.app/posts/${id}`,
       objectToSubmit,
       {
         headers: {

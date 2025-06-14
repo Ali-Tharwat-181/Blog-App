@@ -15,7 +15,7 @@ export default function Login({ handleLogIn }) {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/auth/login",
+        "https://blog-app-server-roan-xi.vercel.app//auth/login",
         data
       );
 

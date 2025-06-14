@@ -21,7 +21,7 @@ export default function SignUp() {
       };
 
       const response = await axios.post(
-        "http://localhost:8000/auth/register",
+        "https://blog-app-server-roan-xi.vercel.app/auth/register",
         payload
       );
       console.log(response);

@@ -13,7 +13,7 @@ export default function Home(props) {
       handleDelete(post);
       // callbackend
       const { data } = await axios.delete(
-        `http://localhost:8000/posts/${post._id}`,
+        `https://blog-app-server-roan-xi.vercel.app/posts/${post._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
