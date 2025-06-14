@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   const handleAddNewPost = (post) => {
-    setPosts([post, ...posts]);
+    setPosts((prevPosts) => [post, ...prevPosts]);
   };
 
   const handleUpdatePost = (updatedPost) => {
