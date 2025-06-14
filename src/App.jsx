@@ -16,10 +16,21 @@ function App() {
 
   useEffect(() => {
     const getPosts = async () => {
-      const { data } = await axios.get(
-        "https://blog-app-server-d1jojwlex-ali-tharwat-181s-projects.vercel.app/posts"
-      );
-      setPosts(data);
+      try {
+        const { data } = await axios.get(
+          "https://blog-app-server-d1jojwlex-ali-tharwat-181s-projects.vercel.app/posts",
+          {
+            withCredentials: true, // Important for CORS with credentials
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        setPosts(data);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+        // Handle error appropriately
+      }
     };
     getPosts();
   }, []);
