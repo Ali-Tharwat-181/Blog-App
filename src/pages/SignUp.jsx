@@ -22,7 +22,8 @@ export default function SignUp() {
 
       const response = await axios.post(
         "https://blog-app-server-roan-xi.vercel.app/auth/register",
-        payload
+        payload,
+        { withCredentials: true }
       );
       console.log(response);
 
@@ -31,7 +32,10 @@ export default function SignUp() {
     } catch (error) {
       console.error("Login failed:", error.response?.data || error.message);
 
-      toast.error("user already exists");
+      toast.error(
+        error.response?.data?.message ||
+          "Registration failed. Please try again."
+      );
     }
   };
 
