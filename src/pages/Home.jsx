@@ -21,7 +21,7 @@ export default function Home(props) {
         }
       );
       // show toast
-      toast.success("Product deleted successfully!");
+      toast.success("Post deleted successfully!");
     } catch (error) {
       console.log(error);
       toast.error(

@@ -56,7 +56,7 @@ export default function CreateNewPost(props) {
       );
       handleAddNewPost(data);
       navigate("/");
-      toast.success("Product Created Successfully!");
+      toast.success("Post Created Successfully!");
     } catch (error) {
       console.error(error);
       toast.error("Failed to create post");
@@ -83,7 +83,7 @@ export default function CreateNewPost(props) {
 
     handleUpdatePost(data);
 
-    toast.success("Product updated successfully!");
+    toast.success("Post updated successfully!");
   };
 
   const handleSubmit = (e) => {
